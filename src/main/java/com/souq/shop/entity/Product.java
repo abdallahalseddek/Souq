@@ -1,10 +1,13 @@
 package com.souq.shop.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "product")
+@Data
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
