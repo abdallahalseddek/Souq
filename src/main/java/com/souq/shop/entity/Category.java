@@ -1,13 +1,16 @@
 package com.souq.shop.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
 @Table(name = "category")
-@Data
+@Getter
+@Setter
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,4 +22,6 @@ public class Category {
     private boolean visible;
     private boolean allowComment;
     private boolean allowAds;
+    @ManyToMany
+    private List<Product> products;
 }
