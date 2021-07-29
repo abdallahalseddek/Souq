@@ -26,8 +26,8 @@ public class CategoryController {
         List<Category> categoryList = categoryRepository.findAll();
         return new ResponseEntity<>(categoryList, HttpStatus.FOUND);
     }
-    @DeleteMapping
-    public HttpStatus deleteCategory(UUID id){
+    @DeleteMapping("{/id}")
+    public HttpStatus deleteCategory(@PathVariable UUID id){
         categoryRepository.deleteById(id);
         return HttpStatus.OK;
     }

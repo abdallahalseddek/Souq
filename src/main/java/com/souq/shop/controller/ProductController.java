@@ -26,8 +26,8 @@ public class ProductController {
         List<Product> productList = productRepository.findAll();
         return new ResponseEntity<>(productList, HttpStatus.FOUND);
     }
-    @DeleteMapping
-    public HttpStatus deleteProduct(UUID id){
+    @DeleteMapping("{/id}")
+    public HttpStatus deleteProduct(@PathVariable UUID id){
         productRepository.deleteById(id);
         return HttpStatus.OK;
     }
