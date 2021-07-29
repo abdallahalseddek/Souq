@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @AllArgsConstructor
@@ -24,5 +25,10 @@ public class ProductController {
     public ResponseEntity<List<Product>> allProducts(){
         List<Product> productList = productRepository.findAll();
         return new ResponseEntity<>(productList, HttpStatus.FOUND);
+    }
+    @DeleteMapping
+    public HttpStatus deleteProduct(UUID id){
+        productRepository.deleteById(id);
+        return HttpStatus.OK;
     }
 }

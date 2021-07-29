@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/category")
@@ -24,5 +25,10 @@ public class CategoryController {
     public ResponseEntity<List<Category>> allCategories(){
         List<Category> categoryList = categoryRepository.findAll();
         return new ResponseEntity<>(categoryList, HttpStatus.FOUND);
+    }
+    @DeleteMapping
+    public HttpStatus deleteCategory(UUID id){
+        categoryRepository.deleteById(id);
+        return HttpStatus.OK;
     }
 }
