@@ -29,8 +29,8 @@ public class UserService implements UserDetailsService {
         user.setUsername(user.getUsername());
         user.setEmail(user.getEmail());
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-
         userRepository.save(user);
+        // TODO : send email verification
        // return "good";
     }
 }
