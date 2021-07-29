@@ -17,7 +17,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @Column(nullable = false)
-    private String title;
+    private String name;
     @Column(nullable = false)
     private String summary;
     @Column(nullable = false)
@@ -25,6 +25,7 @@ public class Product {
     private float discount;
     @Column(nullable = false)
     private int quantity;
+    @Column(updatable = false)
     private LocalDateTime createdAt;
     @ManyToMany
     private List<Category> categories;
