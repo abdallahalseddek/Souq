@@ -16,13 +16,23 @@ import java.util.List;
 @RequestMapping("cart")
 @AllArgsConstructor
 public class CartItemController {
+    // inject objects of classes
     private final CartItemRepository cartItemRepository;
     private final ProductRepository productRepository;
+
+    // Http Get Request to api. it returns List Item & 302 Response
+    // it'll return all products that user added to cart
+    // TODO : user should can change quantity of any product here or when adding to cart
+
     @GetMapping
     public ResponseEntity<List<CartItem>> allCartItems(User user){
         List<CartItem> userCartItems = cartItemRepository.findByUser(user);
         return new ResponseEntity<>(userCartItems, HttpStatus.FOUND);
     }
+
+    //Http post request . it returns Http response : 201
+    // user add product to cart(saved to database)
+    // TODO : No database for cart. check another way to store cart items like cookies or sessions or something like that
     @PostMapping
     public HttpStatus addItemToCart(@RequestBody CartItem cartItem){
       Product product = productRepository.findById(cartItem.getId()).get();

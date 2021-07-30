@@ -20,10 +20,12 @@ public class User implements UserDetails {
     private String username;
     private String email;
     private String password;
-    @Enumerated(EnumType.STRING)
-    private UserRole role;
+    /*@Enumerated(EnumType.STRING)
+    private UserRole role;*/
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        // TODO : impl user Roles
         return null;
                // AuthorityUtils.createAuthorityList(getRole().toString());
     }
@@ -57,4 +59,6 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    // TODO : USE these Methods (isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled). So add Related attributes to user entity
 }

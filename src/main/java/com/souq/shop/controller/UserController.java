@@ -21,5 +21,6 @@ public class UserController {
         userService.signUp(user);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
+    // TODO : user can be deleted or blocked by admin. Maybe we need enabled/ disabled for specific time
 
 }

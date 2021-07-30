@@ -13,8 +13,9 @@ import org.springframework.web.server.NotAcceptableStatusException;
 @Service
 @AllArgsConstructor
 public class UserService implements UserDetailsService {
-
+    // inject using constructor
     private final UserRepository userRepository;
+    // I created Encoding Class because of Bean Circular between WebSecurity Class and UserService
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
@@ -33,4 +34,6 @@ public class UserService implements UserDetailsService {
         // TODO : send email verification
        // return "good";
     }
+    // I use spring login
+    // TODO : add custom login page. so custom logic
 }
