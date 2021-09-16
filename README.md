@@ -1,8 +1,8 @@
 # Souq : an online shop
-##System Requirements 
+## System Requirements 
 Java, Maven, Mysql
-##Run
+## Run
 Using Command Line:
-1. Generate a JAR file `./mvnw package && java -jar`
+1. Generate a JAR file `./mvnw package && java -jar`.
 2.Run app with Mysql db
 
