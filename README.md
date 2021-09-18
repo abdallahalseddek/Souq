@@ -3,8 +3,9 @@
 Download and install [Java 8](https://www.java.com/en/), [Maven](https://maven.apache.org/), [Mysql](https://www.mysql.com/) to get your environment ready to run the API.
 ## Run
 Using Command Line:
-- Generate a JAR file `./mvnw package && java -jar`.
-- Run app with Mysql db
+- Generate a JAR file `mvnw package && java -jar`.
+- Run Mysql db
+- Run the app `mvn spring-boot:run`.
    
 ## Usage
 Navigate to http://localhost:8080 for Home Page. Click Login button.
@@ -24,6 +25,3 @@ Navigate to http://localhost:8080 for Home Page. Click Login button.
 >- email.
 >- username.
 >- Password.
-
-   
-
