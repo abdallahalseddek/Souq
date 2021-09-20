@@ -33,7 +33,7 @@ public class CartItemController {
     //Http post request . it returns Http response : 201
     // user add product to cart(saved to database)
     // TODO : No database for cart. check another way to store cart items like cookies or sessions or something like that
-    @PostMapping
+    @PostMapping("/add")
     public HttpStatus addItemToCart(@RequestBody CartItem cartItem){
       Product product = productRepository.findById(cartItem.getId()).get();
         CartItem byUserAndProduct = cartItemRepository.findByUserAndProduct(cartItem.getUser(), cartItem.getProduct());

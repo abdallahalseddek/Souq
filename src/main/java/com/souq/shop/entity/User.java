@@ -20,14 +20,21 @@ public class User implements UserDetails {
     private String username;
     private String email;
     private String password;
-    /*@Enumerated(EnumType.STRING)
-    private UserRole role;*/
+
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    public User() {
+
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         // TODO : impl user Roles
         return null;
-               // AuthorityUtils.createAuthorityList(getRole().toString());
     }
 
     @Override

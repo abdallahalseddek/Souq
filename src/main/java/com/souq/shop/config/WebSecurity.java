@@ -32,25 +32,15 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .authenticated()
                 .and()
                 .formLogin()
-//                .loginPage("")
-//                .defaultSuccessUrl("/home")
-//                .successForwardUrl("/home")
-//                .permitAll()
-//                .and()
-//                .logout()
-//                .permitAll().deleteCookies("JSESSIONID")
-//                .and()
-//                .exceptionHandling()
-//                .accessDeniedPage("accessDenied")
         ;
     }
 
     @Bean
-    public DaoAuthenticationProvider daoAuthenticationProvider(){
+    public DaoAuthenticationProvider daoAuthenticationProvider() {
         DaoAuthenticationProvider provider
-                =new DaoAuthenticationProvider();
+                = new DaoAuthenticationProvider();
         provider.setUserDetailsService(userService);
-         provider.setPasswordEncoder(bCryptPasswordEncoder);
+        provider.setPasswordEncoder(bCryptPasswordEncoder);
         return provider;
     }
 

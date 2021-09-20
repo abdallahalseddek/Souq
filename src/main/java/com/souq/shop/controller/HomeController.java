@@ -1,4 +1,4 @@
-package com.souq.shop.home;
+package com.souq.shop.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

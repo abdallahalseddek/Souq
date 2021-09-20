@@ -1,5 +1,7 @@
 package com.souq.shop.entity;
 
+import com.souq.shop.entity.Product;
+import com.souq.shop.entity.User;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,10 +16,8 @@ public class CartItem {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @ManyToOne
-    @JoinColumn(name = "user_id")
     private User user;
     @ManyToOne
-    @JoinColumn(name = "product_id")
     private Product product;
     private int quantity;
 }
